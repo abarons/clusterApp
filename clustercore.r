@@ -10,7 +10,7 @@ df_dataset_original<-apply(df_dataset_original,2,as.numeric)
 df_dataset<-df_dataset_original[,apply(df_dataset_original, 2, function(x) !any(is.na(x)))]
 
 
-#Se le colonne sono piu' di due, uso le componenti principali, altrimenti no
+#If ncol>2, then use PC for clustering
 if(ncol(df_dataset)>2){
  mat_dataset<-prcomp(df_dataset)$x[,1:2]
 }else{

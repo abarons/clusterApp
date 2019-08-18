@@ -4,14 +4,14 @@ library(shinyWidgets)
 
 source("clustercore.r")
 
-dashboardHeader<-dashboardHeader(title = "Clustering App",titleWidth="300",tags$li(a(href = 'https://github.com/',
+dashboardHeader<-dashboardHeader(title = "Clustering App",titleWidth="300",tags$li(a(href = 'https://github.com/abarons/clusterApp',
                                                                     img(src = "https://image.flaticon.com/icons/png/128/1051/1051326.png",
                                                                         title = "GitHub Source Code", height = "30px"),
                                                                     style = "padding-top:10px; padding-bottom:10px;"),
                                                                     class = "dropdown")
                                                          ,tags$li(a(href = 'https://it.linkedin.com/in/barone-andrea',
                                                                     img(src = "https://image.flaticon.com/icons/svg/61/61109.svg",
-                                                                        title = "Developer Linkedin Contact", height = "30px"),
+                                                                        title = "Contact Developer", height = "30px"),
                                                                     style = "padding-top:10px; padding-bottom:10px;"),
                                                                   class = "dropdown")
                                                                         )
@@ -50,25 +50,28 @@ dashboardSidebar<-  dashboardSidebar( width = 300,
                                         # Horizontal line ----
                                         tags$hr(),
                                         
-                                            menuItem("KMEANS", icon = icon("bar-chart-o"),
+                                        # KMEANS Menu Item
+                                        
+                                        menuItem("KMEANS", icon = icon("bar-chart-o"),
                                                      textInput("clusternumber", "Number Of Cluster", value = "2"),
                                                      actionButton("kmeans", "Cluster with KMEANS"),
                                                      p("Click here to execute KMEANS clustering algorithm.")
                                                      ),
              
                                         
+                                        # AGNES Menu Items
                                         menuItem("AGNES",icon=icon("bar-chart-o"),
-                                        selectInput("linkageFunction", "Select a Linkage Criterion",
+                                                  selectInput("linkageFunction", "Select a Linkage Criterion",
                                                     c("ward.D","ward.D2","single","complete","average","mcquitty", "median", "centroid")
                                                     ,width = "100%"),
-                                        selectInput("distance", "Select a Distance Metric",
+                                                  selectInput("distance", "Select a Distance Metric",
                                                     c("euclidean", "maximum", "manhattan", "canberra", "binary","minkowski")
                                                     ,width = "100%"),
-                                        actionButton("hclust", "Cluster with AGNES"),
-                                        p("Click to execute AGNES clustering algorithm.")
+                                                  actionButton("hclust", "Cluster with AGNES"),
+                                                  p("Click to execute AGNES clustering algorithm.")
                                         
-                                      )
-                                      )
+                                                )
+                                        )
 )
 
                                       
