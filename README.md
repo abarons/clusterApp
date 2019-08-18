@@ -2,7 +2,7 @@
 
 A Shiny App about clustering algorithms
 
-- KMEANS
+- KMEANS with Principal Components
 - HCLUST with Agnes
 
 Next Steps:
