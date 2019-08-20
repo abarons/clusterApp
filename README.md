@@ -1,14 +1,16 @@
-# clusterApp
+# clusterApp v0.2 Alpha
 
 A Shiny App about clustering algorithms
 
-- KMEANS with Principal Components
+- KMEANS 
 - HCLUST with Agnes
+- DBSCAN
+- Gaussian Mixtures
 
-Next Steps:
+Upload your csv dataset, and download model results.
 
-- DBSCAN Algorithm
-- Summary Dataset Input
-- Summary Clustering Output
-- Download Link 
+Next Steps: for v0.3
+
 - Dynamic Regressors
+- More Plots 
+- Download plots and reports
